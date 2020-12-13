@@ -47,7 +47,7 @@ public class DataInitializer {
                 .log()
                 .subscribe(
                         data -> log.info("data: {}", data),
-                        error -> log.info("error: {}", error),
+                        error -> log.error("error: ", error),
                         () -> log.info("done initialization ...")
                 );
     }
