@@ -2,7 +2,6 @@ package com.reactive.mongodb.reactive.controller;
 
 import com.reactive.mongodb.reactive.model.Student;
 import com.reactive.mongodb.reactive.service.StudentService;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
