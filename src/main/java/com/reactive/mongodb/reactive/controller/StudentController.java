@@ -27,10 +27,7 @@ public class StudentController {
 
     @PostMapping("/students")
     public Mono<Student> create(@RequestBody Student student) {
-        student.setId(UUID.randomUUID().toString());
-        return studentService
-                .save(student)
-                .log();
+        return studentService.save(student);
     }
 
     @GetMapping("/students/{id}")

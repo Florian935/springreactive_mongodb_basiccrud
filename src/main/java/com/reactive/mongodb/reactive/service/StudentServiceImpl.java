@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 @Service
 public class StudentServiceImpl implements StudentService {
 
@@ -22,7 +24,10 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Mono<Student> save(Student student) {
-        return studentRepository.save(student);
+        student.setId(UUID.randomUUID().toString());
+        return studentRepository
+                .save(student)
+                .log();
     }
 
     @Override
